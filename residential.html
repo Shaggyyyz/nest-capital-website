@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Lending | Nest Capital Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: '#686965',
+                            800: '#686965',
+                            700: '#686965',
+                            50: '#f7f9f9',
+                            200: '#e5e7eb',
+                        },
+                        accent: {
+                            400: '#c5a028',
+                            500: '#b08d1e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-brand-900 bg-white">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 px-6 lg:px-12 bg-brand-900">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">Nest Capital Finance</a>
+            <div class="hidden lg:flex gap-8 items-center text-white">
+                <a href="index.html" class="nav-link relative pb-1 hover:text-gray-200 transition">Home</a>
+                <a href="services.html" class="nav-link relative pb-1 hover:text-gray-200 transition">Services</a>
+                <a href="resources.html" class="nav-link relative pb-1 hover:text-gray-200 transition">Resources</a>
+                <a href="about.html" class="nav-link relative pb-1 hover:text-gray-200 transition">About</a>
+                <a href="contact.html" class="nav-link relative pb-1 hover:text-gray-200 transition">Contact</a>
+                <a href="contact.html" class="bg-accent-500 hover:bg-accent-400 px-6 py-2 rounded-sm transition">Book Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Residential Lending</h1>
+            <p class="text-xl text-brand-800">Your home deserves expert financing. Whether you're a first-time buyer or upgrading, we access over 60 lenders to find your perfect rate.</p>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">What We Offer</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-accent-500 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">First Home Buyer Programs</h3>
+                                <p class="text-brand-700">Access government schemes and grants available to first-time buyers</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-accent-500 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Upgrade & Renovation Loans</h3>
+                                <p class="text-brand-700">Finance your dream home upgrade with competitive rates</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-accent-500 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Owner-Occupied Investment</h3>
+                                <p class="text-brand-700">Combine home ownership with investment property returns</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-brand-50 p-8 rounded-sm">
+                    <h3 class="text-2xl font-bold mb-6">Stamp Duty Calculator (VIC)</h3>
+                    <form class="space-y-4" id="stamp-duty-form" onsubmit="event.preventDefault(); calcStampDuty();">
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Property Value</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-3 text-gray-500">$</span>
+                                <input type="number" id="s-value" value="600000" class="w-full border border-gray-300 py-3 pl-8 pr-4 rounded-sm focus:outline-none focus:border-accent-400" onchange="calcStampDuty()">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Property Type</label>
+                            <select id="s-type" class="w-full border border-gray-300 py-3 px-4 rounded-sm focus:outline-none bg-white focus:border-accent-400" onchange="calcStampDuty()">
+                                <option value="established">Established Home</option>
+                                <option value="new">New Home</option>
+                                <option value="land">Vacant Land</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Buyer Status</label>
+                            <select id="s-buyerStatus" class="w-full border border-gray-300 py-3 px-4 rounded-sm focus:outline-none bg-white focus:border-accent-400" onchange="calcStampDuty()">
+                                <option value="standard">Standard Buyer</option>
+                                <option value="fhb">First Home Buyer</option>
+                                <option value="pensioner">Pensioner</option>
+                                <option value="foreign">Foreign Purchaser</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" id="s-ppor" class="w-5 h-5 text-brand-900 border-gray-300 rounded focus:ring-accent-400" checked onchange="calcStampDuty()">
+                            <label for="s-ppor" class="text-sm">I will live in this property (PPR)</label>
+                        </div>
+                        <button type="submit" class="w-full bg-accent-500 hover:bg-accent-400 text-white py-3 rounded-sm font-bold transition">Calculate Fees</button>
+                        
+                        <div class="mt-6 p-6 bg-white rounded-sm border border-gray-200">
+                            <div class="flex justify-between mb-3">
+                                <span class="font-bold">Stamp Duty (VIC)</span>
+                                <span id="s-duty" class="font-bold text-accent-500">$31,070</span>
+                            </div>
+                            <div class="flex justify-between mb-3">
+                                <span>Transfer/Gov Fees</span>
+                                <span id="s-transfer">$1,630</span>
+                            </div>
+                            <div class="flex justify-between pt-3 border-t border-gray-200">
+                                <span class="font-bold text-lg">Total Government Fees</span>
+                                <span id="s-total" class="font-bold text-lg text-accent-500">$32,700</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4">*Estimates only. Rates subject to state legislation changes.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p>&copy; 2025 Nest Capital Finance. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        // Initialize Lucide icons on page load
+        window.onload = function() {
+            lucide.createIcons();
+            calcStampDuty();
+        };
+
+        // VICTORIA STAMP DUTY CALCULATOR
+        // Updated with comprehensive VIC parameters
+        function calcStampDuty() {
+            const value = parseFloat(document.getElementById('s-value').value) || 0;
+            const propertyType = document.getElementById('s-type').value;
+            const buyerStatus = document.getElementById('s-buyerStatus').value;
+            const isPPOR = document.getElementById('s-ppor').checked;
+            
+            let duty = 0;
+            let transfer = 1630;
+
+            if (value === 0) {
+                document.getElementById('s-duty').innerText = '$0';
+                document.getElementById('s-transfer').innerText = '$' + transfer.toLocaleString('en-AU');
+                document.getElementById('s-total').innerText = '$' + transfer.toLocaleString('en-AU');
+                return;
+            }
+
+            // VICTORIA COMPREHENSIVE STAMP DUTY CALCULATION
+            const isFHB = buyerStatus === 'fhb' && isPPOR;
+            const isPensioner = buyerStatus === 'pensioner' && isPPOR;
+            const isForeign = buyerStatus === 'foreign';
+
+            // Calculate General Duty (Standard Non-Concession Rates)
+            let generalDuty = 0;
+            if (value <= 25000) {
+                generalDuty = value * 0.014;
+            } else if (value <= 130000) {
+                generalDuty = 350 + (value - 25000) * 0.024;
+            } else if (value <= 440000) {
+                generalDuty = 2870 + (value - 130000) * 0.05;
+            } else if (value <= 960000) {
+                generalDuty = 18370 + (value - 440000) * 0.06;
+            } else if (value <= 2000000) {
+                generalDuty = 49570 + (value - 960000) * 0.065;
+            } else {
+                generalDuty = value * 0.065;
+            }
+
+            // Apply First Home Buyer Exemption/Concession
+            if (isFHB) {
+                if (value <= 600000) {
+                    duty = 0; // Full exemption
+                } else if (value <= 750000) {
+                    // Sliding scale concession
+                    duty = generalDuty * ((value - 600000) / 150000);
+                } else {
+                    duty = generalDuty; // No FHB benefit
+                }
+            }
+            // Apply Pensioner Concession
+            else if (isPensioner) {
+                if (value <= 600000) {
+                    duty = 0; // Full exemption
+                } else if (value <= 750000) {
+                    // Partial concession
+                    duty = generalDuty * ((value - 600000) / 150000);
+                } else {
+                    duty = generalDuty;
+                }
+            }
+            // Apply PPR Concession (Non-FHB, Non-Pensioner)
+            else if (isPPOR) {
+                if (value <= 550000) {
+                    // PPR concession rates
+                    if (value <= 25000) {
+                        duty = value * 0.014;
+                    } else if (value <= 130000) {
+                        duty = 350 + (value - 25000) * 0.024;
+                    } else if (value <= 440000) {
+                        duty = 2870 + (value - 130000) * 0.05;
+                    } else {
+                        duty = 18370 + (value - 440000) * 0.06;
+                    }
+                } else {
+                    duty = generalDuty; // Above PPR threshold
+                }
+            }
+            // Investment/Commercial - General Rate
+            else {
+                duty = generalDuty;
+            }
+
+            // Add Foreign Purchaser Additional Duty (8%)
+            if (isForeign) {
+                duty += value * 0.08;
+            }
+
+            // Update Display
+            document.getElementById('s-duty').innerText = '$' + Math.round(duty).toLocaleString('en-AU');
+            document.getElementById('s-transfer').innerText = '$' + Math.round(transfer).toLocaleString('en-AU');
+            document.getElementById('s-total').innerText = '$' + Math.round(duty + transfer).toLocaleString('en-AU');
+        }
+    </script>
+</body>
+</html>
