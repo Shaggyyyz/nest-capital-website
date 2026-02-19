@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nest Capital Finance | Mortgage Broker Melbourne | Home Loans & Commercial</title>
+    <meta name="description" content="Nest Capital Finance: Trusted Melbourne mortgage brokers. We specialize in First Home Buyers, Investment Loans, SMSF Lending & Commercial Finance across Essendon, Richmond, South Yarra.">
+    <meta name="keywords" content="Mortgage Broker Melbourne, Home Loans Victoria, Commercial Finance, SMSF Lending, Refinancing, First Home Buyer Grant, Investment Property Loans, Asset Finance">
+    <meta name="author" content="Nest Capital Finance">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['FuturaPT', 'Futura', 'Jost', 'sans-serif'],
+                        serif: ['FuturaPT', 'Futura', 'Jost', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            900: '#686965',
+                            800: '#686965',
+                            700: '#686965',
+                            600: '#337566',
+                            300: '#d1d5db',
+                            200: '#e5e7eb',
+                            100: '#eff5f4',
+                            50: '#f7f9f9',
+                        },
+                        accent: {
+                            400: '#c5a028',
+                            500: '#b08d1e',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fadeIn': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-brand-900">
+
+    <!-- Floating CTA -->
+    <a href="contact.html" class="floating-cta bg-accent-500 text-white px-6 py-3 rounded-sm hover:bg-accent-400 flex items-center gap-2">
+        <i data-lucide="phone"></i>
+        <span>Book Now</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">Nest Capital Finance</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex gap-8 items-center text-white">
+                <a href="index.html" class="nav-link relative pb-1 hover:text-gray-200 transition">Home</a>
+                <a href="services.html" class="nav-link relative pb-1 hover:text-gray-200 transition">Services</a>
+                <a href="resources.html" class="nav-link relative pb-1 hover:text-gray-200 transition">Resources</a>
+                <a href="about.html" class="nav-link relative pb-1 hover:text-gray-200 transition">About</a>
+                <a href="contact.html" class="nav-link relative pb-1 hover:text-gray-200 transition">Contact</a>
+                <a href="contact.html" class="bg-accent-500 hover:bg-accent-400 px-6 py-2 rounded-sm transition">Book Consultation</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-900 z-50 transform translate-x-full transition-transform duration-300">
+        <div class="flex justify-between items-center p-6">
+            <span class="text-white text-2xl font-bold">Menu</span>
+            <button id="close-menu-btn" class="text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div class="flex flex-col gap-6 px-6 text-white text-lg">
+            <a href="index.html" onclick="toggleMenu()" class="py-2 border-b border-gray-700">Home</a>
+            <a href="services.html" onclick="toggleMenu()" class="py-2 border-b border-gray-700">Services</a>
+            <a href="resources.html" onclick="toggleMenu()" class="py-2 border-b border-gray-700">Resources</a>
+            <a href="lenders.html" onclick="toggleMenu()" class="py-2 border-b border-gray-700">Lenders</a>
+            <a href="about.html" onclick="toggleMenu()" class="py-2 border-b border-gray-700">About</a>
+            <a href="contact.html" onclick="toggleMenu()" class="py-2 border-b border-gray-700">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Slideshow -->
+        <div class="hero-bg-slide active">
+            <img src="https://shaggyyyz.github.io/nest-capital-finance/normalhouse.png" alt="first home buyer Melbourne" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-900/80 to-brand-900/40"></div>
+        </div>
+        <div class="hero-bg-slide">
+            <img src="https://shaggyyyz.github.io/nest-capital-finance/Rowhouse.jpg" alt="townhouse" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-900/80 to-brand-900/40"></div>
+        </div>
+        <div class="hero-bg-slide">
+            <img src="https://shaggyyyz.github.io/nest-capital-finance/commercial.png" alt="commercial Property Investment" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-900/80 to-brand-900/40"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center text-white px-6 max-w-5xl">
+            <h1 class="sr-only">Nest Capital Finance - Expert Mortgage Brokers Melbourne</h1>
+            <div class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <div class="hero-word-wrapper">
+                    <span class="hero-word">Dream.</span>
+                </div>
+                <div class="hero-word-wrapper">
+                    <span class="hero-word" style="transition-delay: 0.2s;">Plan.</span>
+                </div>
+                <div class="hero-word-wrapper">
+                    <span class="hero-word" style="transition-delay: 0.4s;">Buy!</span>
+                </div>
+            </div>
+            <p class="text-xl md:text-2xl mb-8 font-light">Navigate the complex financial landscape with Melbourne's trusted mortgage experts. We provide clarity, confidence, and control for your property journey.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-accent-500 hover:bg-accent-400 px-8 py-4 rounded-sm text-lg font-medium transition">Start Conversation</a>
+                <a href="services.html" class="border-2 border-white hover:bg-white hover:text-brand-900 px-8 py-4 rounded-sm text-lg font-medium transition">Our Services</a>
+            </div>
+            <div class="mt-12 flex flex-col items-center gap-2">
+                <span class="text-sm opacity-75">Scroll</span>
+                <i data-lucide="chevron-down" class="w-6 h-6 animate-bounce"></i>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
