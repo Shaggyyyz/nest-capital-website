@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Nest Capital Finance Melbourne</title>
+    <meta name="description" content="Contact Nest Capital Finance for expert mortgage advice. Book your free consultation today. Phone: 1300 385 222. Melbourne mortgage brokers.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 900: '#686965', 100: '#eff5f4' },
+                        accent: { 400: '#c5a028', 500: '#b08d1e' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-brand-900">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 px-6 lg:px-12 bg-brand-900">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">Nest Capital Finance</a>
+            <div class="hidden lg:flex gap-8 items-center text-white">
+                <a href="index.html" class="hover:text-gray-200">Home</a>
+                <a href="services.html" class="hover:text-gray-200">Services</a>
+                <a href="resources.html" class="hover:text-gray-200">Resources</a>
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+            </div>
+            <button id="mobile-menu-btn" class="lg:hidden text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h1 class="text-5xl font-bold mb-6">Get In Touch</h1>
+                    <p class="text-xl text-gray-600 mb-8">We are here to help you navigate your property journey. Reach out today.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="phone" class="w-6 h-6 text-accent-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold mb-1">Phone</h3>
+                                <a href="tel:1300385222" class="text-gray-600 hover:text-accent-500">1300 385 222</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="mail" class="w-6 h-6 text-accent-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold mb-1">Email</h3>
+                                <a href="mailto:info@nestcapitalfinance.com.au" class="text-gray-600 hover:text-accent-500">info@nestcapitalfinance.com.au</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-accent-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold mb-1">Office</h3>
+                                <p class="text-gray-600">Melbourne, VIC<br>Servicing CBD, Inner North & Eastern Suburbs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="clock" class="w-6 h-6 text-accent-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold mb-1">Office Hours</h3>
+                                <p class="text-gray-600">Monday - Friday: 9:00 AM - 5:30 PM<br>Weekends: By Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-sm shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6">Send us a Message</h2>
+                    <form id="contact-form" onsubmit="handleFormSubmit(event, 'form-message')">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Name</label>
+                                <input type="text" name="name" required placeholder="e.g. Jane Doe" class="w-full border-b border-gray-300 py-2 px-3 focus:outline-none focus:border-accent-400 transition rounded-sm placeholder-gray-400 text-brand-900 bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Phone</label>
+                                <input type="tel" name="phone" required placeholder="e.g. 0400 000 000" class="w-full border-b border-gray-300 py-2 px-3 focus:outline-none focus:border-accent-400 transition rounded-sm placeholder-gray-400 text-brand-900 bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" name="email" required placeholder="e.g. jane@example.com" class="w-full border-b border-gray-300 py-2 px-3 focus:outline-none focus:border-accent-400 transition rounded-sm placeholder-gray-400 text-brand-900 bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">I'm interested in...</label>
+                                <select name="interest" required class="w-full border-b border-gray-300 py-2 px-3 focus:outline-none focus:border-accent-400 transition rounded-sm text-brand-900 bg-white">
+                                    <option value="" disabled selected>Select an option...</option>
+                                    <option value="first-home">Buying my first home</option>
+                                    <option value="refinance">Refinancing</option>
+                                    <option value="investment">Investment Property</option>
+                                    <option value="commercial">Commercial Finance</option>
+                                    <option value="asset">Asset Finance</option>
+                                    <option value="other">General Enquiry</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Message</label>
+                                <textarea name="message" rows="4" class="w-full border border-gray-300 py-2 px-3 focus:outline-none focus:border-accent-400 transition rounded-sm text-brand-900 bg-white" placeholder="Tell us about your finance needs..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-accent-500 hover:bg-accent-400 text-white py-3 px-6 rounded-sm font-medium transition">
+                                Send Enquiry
+                            </button>
+                        </div>
+                    </form>
+                    <div id="form-message" class="hidden mt-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Nest Capital Finance</h3>
+                    <p class="text-gray-400">Your trusted partner in finance.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="residential.html" class="hover:text-white">Residential</a></li>
+                        <li><a href="investment.html" class="hover:text-white">Investment</a></li>
+                        <li><a href="commercial.html" class="hover:text-white">Commercial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="calculators.html" class="hover:text-white">Calculators</a></li>
+                        <li><a href="faqs.html" class="hover:text-white">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">Melbourne, VIC<br>1300 385 222<br>info@ncfinance.com.au</p>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>© 2025 Nest Capital Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        // Google Sheets Form Handler
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzM5V1rksCGnt3xLXyfSwEIRo-mFieppORTHWYZNQ_9SLlLa259aPvB_ZnOAHyjnLpeMA/exec';
+        
+        async function handleFormSubmit(e, messageId) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const messageDiv = document.getElementById(messageId);
+            
+            const formData = {
+                name: form.name.value,
+                phone: form.phone.value,
+                email: form.email.value,
+                interest: form.interest.value,
+                message: form.message.value
+            };
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'SENDING...';
+            submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                messageDiv.innerHTML = `
+                    <div class="bg-green-500/20 border border-green-500/40 rounded-sm p-4">
+                        <p class="font-medium">✓ Thank you! Your message has been sent successfully.</p>
+                        <p class="text-sm mt-1 opacity-80">We'll get back to you within 24 hours.</p>
+                    </div>
+                `;
+                messageDiv.classList.remove('hidden');
+                form.reset();
+            } catch (error) {
+                messageDiv.innerHTML = `
+                    <div class="bg-red-500/20 border border-red-500/40 rounded-sm p-4">
+                        <p class="font-medium">✗ Oops! Something went wrong.</p>
+                        <p class="text-sm mt-1 opacity-80">Please try again or call us directly.</p>
+                    </div>
+                `;
+                messageDiv.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'SEND ENQUIRY';
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+    </script>
+</body>
+</html>
